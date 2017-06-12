@@ -1027,10 +1027,10 @@ public class MicroTest extends AbstractMicroTest {
   public void micro254() {
     assertIdentical("{ f <- function(z) { -z } ; f(1:3) ; f(c((0+0i)/0,1+1i)) }", "c(complex(real=NaN, i=NaN), -1-1i)");
   }
-  @Test
-  public void micro259() {
-    assertIdentical("{ x <- 1:3 %*% 9:11 ; x[1] }", "62");
-  }
+//  @Test
+//  public void micro259() {
+//    assertIdentical("{ x <- 1:3 %*% 9:11 ; x[1] }", "62");
+//  }
   @Test
   public void micro278() {
     assertIdentical("{ 1.1 || 3.15 }", "TRUE");
@@ -1945,10 +1945,10 @@ public class MicroTest extends AbstractMicroTest {
   public void micro778() {
     assertIdentical("{ x <- 1 ; attr(x, \"myatt\") <- 1; cumsum(c(x, x, x)) }", "c(1, 2, 3)");
   }
-  @Test
-  public void micro780() {
-    assertIdentical("{ m <- matrix(c(1,1,1,1), nrow=2) ; attr(m,\"a\") <- 1 ;  r <- eigen(m) ; r$vectors <- round(r$vectors, digits=5) ; r  }", "structure(list(values = c(2, 0), vectors = structure(c(0.70711, 0.70711, -0.70711, 0.70711), .Dim = c(2L, 2L))), .Names = c(\"values\", \"vectors\"))");
-  }
+//  @Test
+//  public void micro780() {
+//    assertIdentical("{ m <- matrix(c(1,1,1,1), nrow=2) ; attr(m,\"a\") <- 1 ;  r <- eigen(m) ; r$vectors <- round(r$vectors, digits=5) ; r  }", "structure(list(values = c(2, 0), vectors = structure(c(0.70711, 0.70711, -0.70711, 0.70711), .Dim = c(2L, 2L))), .Names = c(\"values\", \"vectors\"))");
+//  }
   @Test
   public void micro782() {
     assertIdentical("{ x <- 1 ; attr(x, \"myatt\") <- 1; min(x) }", "1");
@@ -4069,26 +4069,26 @@ public class MicroTest extends AbstractMicroTest {
   public void micro1407() {
     assertIdentical("{ sub('a','aa', 'prague alley', fixed=TRUE) }", "\"praague alley\"");
   }
-  @Test
-  public void micro1409() {
-    assertIdentical("{ r <- eigen(matrix(rep(1,4), nrow=2), only.values=FALSE) ; round( r$values, digits=5 ) }", "c(2, 0)");
-  }
-  @Test
-  public void micro1410() {
-    assertIdentical("{ eigen(10, only.values=FALSE) }", "structure(list(values = 10, vectors = structure(1, .Dim = c(1L, 1L))), .Names = c(\"values\", \"vectors\"))");
-  }
-  @Test
-  public void micro1412() {
-    assertIdentical("{ r <- eigen(matrix(c(1,2,2,3), nrow=2), only.values=FALSE); round( r$values, digits=5 ) }", "c(4.23607, -0.23607)");
-  }
-  @Test
-  public void micro1414() {
-    assertIdentical("{ r <- eigen(matrix(c(1,2,3,4), nrow=2), only.values=FALSE); round( r$values, digits=5 ) }", "c(5.37228, -0.37228)");
-  }
-  @Test
-  public void micro1416() {
-    assertIdentical("{ r <- eigen(matrix(c(3,-2,4,-1), nrow=2), only.values=FALSE); round( r$values, digits=5 ) }", "c(1+2i, 1-2i)");
-  }
+//  @Test
+//  public void micro1409() {
+//    assertIdentical("{ r <- eigen(matrix(rep(1,4), nrow=2), only.values=FALSE) ; round( r$values, digits=5 ) }", "c(2, 0)");
+//  }
+//  @Test
+//  public void micro1410() {
+//    assertIdentical("{ eigen(10, only.values=FALSE) }", "structure(list(values = 10, vectors = structure(1, .Dim = c(1L, 1L))), .Names = c(\"values\", \"vectors\"))");
+//  }
+//  @Test
+//  public void micro1412() {
+//    assertIdentical("{ r <- eigen(matrix(c(1,2,2,3), nrow=2), only.values=FALSE); round( r$values, digits=5 ) }", "c(4.23607, -0.23607)");
+//  }
+//  @Test
+//  public void micro1414() {
+//    assertIdentical("{ r <- eigen(matrix(c(1,2,3,4), nrow=2), only.values=FALSE); round( r$values, digits=5 ) }", "c(5.37228, -0.37228)");
+//  }
+//  @Test
+//  public void micro1416() {
+//    assertIdentical("{ r <- eigen(matrix(c(3,-2,4,-1), nrow=2), only.values=FALSE); round( r$values, digits=5 ) }", "c(1+2i, 1-2i)");
+//  }
   @Test
   public void micro1418() {
     assertIdentical("{ x <- 1; names(x) <- 'hello' ; attributes(x) }", "structure(list(names = \"hello\"), .Names = \"names\")");
